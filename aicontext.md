@@ -84,3 +84,16 @@ To reduce hallucination and improve AI-assisted workflows:
 - Comment above a function or component with what it should do. E.g.:
   ```tsx
   // Renders a responsive grid of Service cards from Contentful
+
+```
+
+---
+
+## 🚀 Live Event Feature (July 2024)
+
+- **/live page**: Users can enter a Meeting Code in a form. On submit, the app attempts to fetch a LiveEvent from Contentful (mocked for now) and displays a loading spinner while fetching.
+- **LiveEvent type**: `{ title: string; description: string; embedUrl: string; }`
+- **LiveEventCard component**: Displays the event's title, description, and an embedded video if available.
+- **Contentful API utility**: `lib/contentful.ts` provides a flexible fetcher for LiveEvent and is designed to support other Contentful content types in the future.
+- **Mocked data**: While testing, the fetcher returns mock events for codes like `YOGA123` and `MEDITATE456`.
+- **Error handling**: If no event is found, a user-friendly error is shown.
