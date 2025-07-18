@@ -51,7 +51,7 @@ const LivePage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-white px-2">
+    <div className="min-h-screen flex flex-col items-center bg-white px-2">
       {!event && (
         <div className="bg-white shadow-lg rounded-lg p-8 w-full max-w-md mt-12">
           <h1 className="text-2xl font-bold mb-6 text-center">Join a Live Meeting</h1>

@@ -1,13 +1,12 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import netlifyLogo from 'public/netlify-logo.svg';
+import MainLogo from 'public/images/logo.svg';
 import githubLogo from 'public/images/github-mark-white.svg';
 import { useLivestream } from '../context/LivestreamContext';
 import { useRouter } from 'next/navigation';
 
 const navItems = [
-    { linkText: 'Home', href: '/' },
     { linkText: 'Live', href: '/live' }
 ];
 
@@ -26,13 +25,13 @@ export function Header() {
     return (
         <nav className="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12 md:pb-24 relative">
             <Link href="/">
-                <Image src={netlifyLogo} alt="Netlify logo" />
+                <Image src={MainLogo} width={250} alt="Connect Wellness logo" />
             </Link>
             {!!navItems?.length && (
                 <ul className="flex flex-wrap gap-x-4 gap-y-1">
                     {navItems.map((item, index) => (
                         <li key={index}>
-                            <Link href={item.href} className="inline-flex px-1.5 py-1 sm:px-3 sm:py-2">
+                            <Link href={item.href} className="no-underline text-gray-900 hover:text-blue-500 transition inline-flex px-1.5 py-1 sm:px-3 sm:py-2">
                                 {item.linkText}
                             </Link>
                         </li>
@@ -42,7 +41,7 @@ export function Header() {
             {event && (
               <button
                 onClick={() => router.push && router.push('/live')}
-                className="absolute right-0 top-0 mt-4 mr-2 px-5 py-2 rounded-full bg-red-600 text-white font-semibold shadow-lg text-sm transition hover:bg-red-700"
+                className="self-end px-5 py-2 rounded-full bg-red-600 text-white font-semibold shadow-lg text-sm transition hover:bg-red-700"
                 style={{ zIndex: 10 }}
               >
                 Meeting in Progress
