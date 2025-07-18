@@ -36,6 +36,8 @@ We are starting from the official [Netlify Next.js platform starter](https://git
 
 > Keep in sync with the Contentful model definitions to avoid runtime errors. Changes to model fields should be reflected in both the Contentful UI and TypeScript types (use generated types when possible).
 
+> All React context should be stored in the `/context` directory. Do not place context files in `/components` or elsewhere.
+
 ---
 
 ## 🧑‍💻 Code Standards
@@ -97,3 +99,5 @@ To reduce hallucination and improve AI-assisted workflows:
 - **Contentful API utility**: `lib/contentful.ts` provides a flexible fetcher for LiveEvent and is designed to support other Contentful content types in the future.
 - **Mocked data**: While testing, the fetcher returns mock events for codes like `YOGA123` and `MEDITATE456`.
 - **Error handling**: If no event is found, a user-friendly error is shown.
+- When a livestream is active, a **Meeting in Progress** pill button appears at the top right of the header. Clicking it returns to /live with the livestream playing.
+- At the bottom of the livestream page, a **Leave Livestream** button lets the user exit the session and clears the livestream state, returning to the join form.
